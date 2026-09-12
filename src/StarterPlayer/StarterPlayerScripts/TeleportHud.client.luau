@@ -12,7 +12,6 @@ local UiIcon = require(Modules:WaitForChild("UiIcon"))
 local UiTheme = require(Modules:WaitForChild("UiTheme"))
 local VipPurchase = require(Modules:WaitForChild("VipPurchase"))
 local PlaceConfig = require(Modules:WaitForChild("PlaceConfig"))
-local AfkConfig = require(Modules:WaitForChild("AfkConfig"))
 
 local remotes = ReplicatedStorage:WaitForChild("Remotes")
 local requestTeleportRemote = remotes:WaitForChild("RequestTeleport") :: RemoteEvent
@@ -54,8 +53,8 @@ local layout = UiTheme.Create("UIListLayout", {
 	SortOrder = Enum.SortOrder.LayoutOrder,
 }, buttonRow) :: UIListLayout
 
-local confirmOverlay = UiTheme.Create("Frame", {
-	Name = "AfkConfirm",
+local portalOverlay = UiTheme.Create("Frame", {
+	Name = "PortalPicker",
 	BackgroundColor3 = Color3.fromRGB(20, 28, 40),
 	BackgroundTransparency = 0.35,
 	Size = UDim2.fromScale(1, 1),
@@ -63,17 +62,17 @@ local confirmOverlay = UiTheme.Create("Frame", {
 	ZIndex = 40,
 }, screenGui) :: Frame
 
-local confirmDialog = UiTheme.Create("Frame", {
+local portalDialog = UiTheme.Create("Frame", {
 	Name = "Dialog",
 	AnchorPoint = Vector2.new(0.5, 0.5),
 	BackgroundColor3 = UiTheme.Colors.BgRaised,
 	BorderSizePixel = 0,
 	Position = UDim2.fromScale(0.5, 0.5),
-	Size = UDim2.fromOffset(400, 210),
+	Size = UDim2.fromOffset(400, 236),
 	ZIndex = 41,
-}, confirmOverlay) :: Frame
-UiTheme.Corner(confirmDialog, UiTheme.CornerPanel)
-UiTheme.Stroke(confirmDialog, UiTheme.Colors.Stroke, 4, 0)
+}, portalOverlay) :: Frame
+UiTheme.Corner(portalDialog, UiTheme.CornerPanel)
+UiTheme.Stroke(portalDialog, UiTheme.Colors.Stroke, 4, 0)
 
 UiTheme.Create("TextLabel", {
 	Name = "Title",
@@ -81,43 +80,54 @@ UiTheme.Create("TextLabel", {
 	Position = UDim2.fromOffset(20, 16),
 	Size = UDim2.fromOffset(360, 28),
 	Font = UiTheme.FontTitle,
-	Text = AfkConfig.EnterTitle,
+	Text = "Go to portal",
 	TextColor3 = UiTheme.Colors.TextDark,
 	TextSize = 22,
 	TextXAlignment = Enum.TextXAlignment.Left,
 	ZIndex = 42,
-}, confirmDialog)
+}, portalDialog)
 
 UiTheme.Create("TextLabel", {
 	Name = "Body",
 	BackgroundTransparency = 1,
-	Position = UDim2.fromOffset(20, 52),
-	Size = UDim2.fromOffset(360, 78),
+	Position = UDim2.fromOffset(20, 48),
+	Size = UDim2.fromOffset(360, 36),
 	Font = UiTheme.FontBody,
-	Text = AfkConfig.EnterBody,
+	Text = "Walk up to a portal, then press E. AFK lobby or another world.",
 	TextColor3 = UiTheme.Colors.TextDim,
-	TextSize = 16,
+	TextSize = 15,
 	TextWrapped = true,
 	TextXAlignment = Enum.TextXAlignment.Left,
 	TextYAlignment = Enum.TextYAlignment.Top,
 	ZIndex = 42,
-}, confirmDialog)
+}, portalDialog)
 
-local confirmYes = UiTheme.Button({
-	Name = "Yes",
-	Parent = confirmDialog,
-	Position = UDim2.fromOffset(20, 146),
-	Size = UDim2.fromOffset(170, 42),
-	Text = AfkConfig.EnterConfirm,
-	TextSize = 16,
+local goAfkPortal = UiTheme.Button({
+	Name = "AfkPortal",
+	Parent = portalDialog,
+	Position = UDim2.fromOffset(20, 96),
+	Size = UDim2.fromOffset(360, 44),
+	Text = "AFK portal",
+	TextSize = 18,
 	Variant = "pink",
 	ZIndex = 42,
 })
 
-local confirmCancel = UiTheme.Button({
+local goWorldsPortal = UiTheme.Button({
+	Name = "WorldsPortal",
+	Parent = portalDialog,
+	Position = UDim2.fromOffset(20, 148),
+	Size = UDim2.fromOffset(170, 42),
+	Text = "Worlds",
+	TextSize = 16,
+	Variant = "cyan",
+	ZIndex = 42,
+})
+
+local portalCancel = UiTheme.Button({
 	Name = "Cancel",
-	Parent = confirmDialog,
-	Position = UDim2.fromOffset(210, 146),
+	Parent = portalDialog,
+	Position = UDim2.fromOffset(210, 148),
 	Size = UDim2.fromOffset(170, 42),
 	Text = "Cancel",
 	TextSize = 16,
@@ -169,11 +179,11 @@ local buttons: { ButtonDef } = {
 		RequiresVip = true,
 	},
 	{
-		Id = "afk",
-		Label = "AFK",
+		Id = "portal",
+		Label = "PORTAL",
 		Variant = "pink",
 		Order = 5,
-		GateAction = "teleport_afk",
+		GateAction = "teleport_portal",
 	},
 }
 
@@ -182,6 +192,16 @@ local buttonRefs: { [string]: TextButton } = {}
 
 local function hasVipAccess(): boolean
 	return localPlayer:GetAttribute("VipAccess") == true
+end
+
+local function hidePortalPicker()
+	portalOverlay.Visible = false
+	screenGui.DisplayOrder = 8
+end
+
+local function showPortalPicker()
+	portalOverlay.Visible = true
+	screenGui.DisplayOrder = 50
 end
 
 local function requestTeleport(destinationId: string, gateAction: string, requiresVip: boolean?)
@@ -210,7 +230,7 @@ local TP_ICON_KEYS: { [string]: string } = {
 	sell = "tp_sell",
 	throw = "tp_throw",
 	throw_vip = "tp_vip",
-	afk = "tp_afk",
+	portal = "tp_portal",
 }
 
 local function refreshVipButton()
@@ -241,7 +261,7 @@ for _, def in ipairs(buttons) do
 		Name = def.Id .. "Button",
 		Text = def.Label,
 		Parent = buttonRow,
-		Size = UDim2.fromOffset(100, 48),
+		Size = UDim2.fromOffset(110, 48),
 		Variant = def.Variant,
 		LayoutOrder = def.Order,
 		TextSize = 18,
@@ -259,12 +279,11 @@ for _, def in ipairs(buttons) do
 
 	buttonRefs[def.Id] = button
 	button.MouseButton1Click:Connect(function()
-		if def.Id == "afk" then
+		if def.Id == "portal" then
 			if not TutorialGate.TryAction(def.GateAction) then
 				return
 			end
-			confirmOverlay.Visible = true
-			screenGui.DisplayOrder = 50
+			showPortalPicker()
 			return
 		end
 		requestTeleport(def.Id, def.GateAction, def.RequiresVip)
@@ -274,15 +293,16 @@ end
 refreshVipButton()
 localPlayer:GetAttributeChangedSignal("VipAccess"):Connect(refreshVipButton)
 
-confirmCancel.MouseButton1Click:Connect(function()
-	confirmOverlay.Visible = false
-	screenGui.DisplayOrder = 8
+portalCancel.MouseButton1Click:Connect(hidePortalPicker)
+
+goAfkPortal.MouseButton1Click:Connect(function()
+	hidePortalPicker()
+	requestTeleport("afk_portal", "teleport_portal")
 end)
 
-confirmYes.MouseButton1Click:Connect(function()
-	confirmOverlay.Visible = false
-	screenGui.DisplayOrder = 8
-	requestTeleport("afk", "teleport_afk")
+goWorldsPortal.MouseButton1Click:Connect(function()
+	hidePortalPicker()
+	requestTeleport("maps", "teleport_portal")
 end)
 
 layout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()

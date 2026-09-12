@@ -51,6 +51,7 @@ IconAssets.Emoji = {
 	tp_vip = "👑",
 	tp_vip_locked = "🔒",
 	tp_afk = "💤",
+	tp_portal = "🌀",
 
 	inv_lock = "🔒",
 	inv_unlock = "🔓",

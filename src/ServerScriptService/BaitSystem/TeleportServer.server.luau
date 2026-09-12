@@ -25,6 +25,7 @@ local GiftService = require(script.Parent:WaitForChild("GiftService"))
 local IndexService = require(script.Parent:WaitForChild("IndexService"))
 
 local PORTAL_STATION_TAG = "PortalStation"
+local AFK_PORTAL_STATION_TAG = "AfkPortalStation"
 local COOLDOWN_SECONDS = 0.25
 local TELEPORT_RETRY_DELAY = 1.25
 local MAX_TELEPORT_RETRIES = 2
@@ -41,6 +42,8 @@ type PendingCrossPlaceTeleport = {
 local pendingCrossPlaceTeleports: { [Player]: PendingCrossPlaceTeleport } = {}
 local boundPortalPrompts: { [ProximityPrompt]: boolean } = {}
 local boundPortalDetectors: { [ClickDetector]: boolean } = {}
+local boundAfkPortalPrompts: { [ProximityPrompt]: boolean } = {}
+local boundAfkPortalDetectors: { [ClickDetector]: boolean } = {}
 
 type DestConfig = {
 	Names: { string },
@@ -87,6 +90,18 @@ local DESTINATIONS: { [string]: DestConfig } = {
 		StandGap = 8,
 	},
 	afk = {
+		Names = {},
+		ApproachSign = 1,
+		StandGap = 8,
+	},
+	-- Same-place walk to the built map portal (Attribute name=portal).
+	maps = {
+		Names = {},
+		ApproachSign = 1,
+		StandGap = 8,
+	},
+	-- Same-place walk to the built AFK portal (Attribute name=AFK portal).
+	afk_portal = {
 		Names = {},
 		ApproachSign = 1,
 		StandGap = 8,
@@ -314,7 +329,23 @@ local function resolveDestination(destinationId: string): CFrame?
 	end
 
 	-- Cross-place maps — handled by TeleportService, not CFrame.
-	if destinationId == "map2" or destinationId == "map1" or destinationId == "map3" then
+	if destinationId == "map2" or destinationId == "map1" or destinationId == "map3" or destinationId == "afk" then
+		return nil
+	end
+
+	if destinationId == "maps" then
+		local target = CaveConfig.FindMapPortal()
+		if target then
+			return getFrontFacingCFrame(target, destinationId, config)
+		end
+		return nil
+	end
+
+	if destinationId == "afk_portal" then
+		local target = CaveConfig.FindAfkPortal()
+		if target then
+			return getFrontFacingCFrame(target, destinationId, config)
+		end
 		return nil
 	end
 
@@ -708,6 +739,10 @@ local function teleportPlayer(player: Player, destinationId: string): boolean
 			sendTeleportError(player, "VipSpawn marker not found (Attribute name=VipSpawn).")
 		elseif destinationId == "throw" then
 			sendTeleportError(player, "ThrowSpawn marker not found (Attribute name=ThrowSpawn).")
+		elseif destinationId == "maps" then
+			sendTeleportError(player, "Map portal not found (Attribute name=portal).")
+		elseif destinationId == "afk_portal" then
+			sendTeleportError(player, "AFK portal not found (Attribute name=AFK portal).")
 		end
 		return false
 	end
@@ -776,43 +811,69 @@ local function openMapPicker(player: Player)
 	})
 end
 
-local function isMapPortalInstance(instance: Instance): boolean
-	if CollectionService:HasTag(instance, PORTAL_STATION_TAG) then
-		return true
+local function promptAfkEnter(player: Player)
+	if player:GetAttribute("TutorialCompleted") ~= true then
+		sendTeleportError(player, "Finish the guide first.")
+		return
 	end
-	if string.lower(instance.Name) == "portal" then
-		return true
-	end
-	local dest = instance:GetAttribute("PortalDestination")
-	if typeof(dest) == "string" then
-		local lower = string.lower(dest)
-		if lower == "picker" or lower == "map1" or lower == "map2" or lower == "map3" then
-			return true
-		end
-	end
-	return false
+
+	openMapPickerRemote:FireClient(player, {
+		Type = "AfkEnter",
+	})
 end
 
-local function resolvePortalDestination(prompt: ProximityPrompt): string?
-	local promptDest = prompt:GetAttribute("PortalDestination")
-	if typeof(promptDest) == "string" and string.lower(promptDest) == "picker" then
-		return "picker"
-	end
-
-	local current: Instance? = prompt.Parent
+local function getPortalDestinationFromInstance(instance: Instance): string?
+	local current: Instance? = instance
 	while current and current ~= Workspace do
-		if isMapPortalInstance(current) then
+		if CollectionService:HasTag(current, AFK_PORTAL_STATION_TAG) or CaveConfig.IsAfkPortal(current) then
+			return "afk"
+		end
+		local dest = current:GetAttribute("PortalDestination")
+		if typeof(dest) == "string" then
+			local lower = string.lower(dest)
+			if lower == "afk" then
+				return "afk"
+			end
+			if lower == "picker" or lower == "map1" or lower == "map2" or lower == "map3" then
+				return "picker"
+			end
+		end
+		if CollectionService:HasTag(current, PORTAL_STATION_TAG) then
+			return "picker"
+		end
+		if string.lower(current.Name) == "portal" and not CaveConfig.IsAfkPortal(current) then
 			return "picker"
 		end
 		current = current.Parent
 	end
+	return nil
+end
 
+local function resolvePortalDestination(prompt: ProximityPrompt): string?
+	local promptDest = prompt:GetAttribute("PortalDestination")
+	if typeof(promptDest) == "string" then
+		local lower = string.lower(promptDest)
+		if lower == "afk" then
+			return "afk"
+		end
+		if lower == "picker" then
+			return "picker"
+		end
+	end
+
+	local parent = prompt.Parent
+	if parent then
+		return getPortalDestinationFromInstance(parent)
+	end
 	return nil
 end
 
 ProximityPromptService.PromptTriggered:Connect(function(prompt, player)
-	if resolvePortalDestination(prompt) then
+	local dest = resolvePortalDestination(prompt)
+	if dest == "picker" then
 		openMapPicker(player)
+	elseif dest == "afk" then
+		promptAfkEnter(player)
 	end
 end)
 
@@ -823,8 +884,21 @@ local function bindPortalPrompt(prompt: ProximityPrompt)
 
 	boundPortalPrompts[prompt] = true
 	prompt.Triggered:Connect(function(player)
-		if resolvePortalDestination(prompt) then
+		if resolvePortalDestination(prompt) == "picker" then
 			openMapPicker(player)
+		end
+	end)
+end
+
+local function bindAfkPortalPrompt(prompt: ProximityPrompt)
+	if boundAfkPortalPrompts[prompt] then
+		return
+	end
+
+	boundAfkPortalPrompts[prompt] = true
+	prompt.Triggered:Connect(function(player)
+		if resolvePortalDestination(prompt) == "afk" then
+			promptAfkEnter(player)
 		end
 	end)
 end
@@ -850,11 +924,38 @@ local function bindPortalStation(station: Instance)
 	end
 end
 
+local function bindAfkPortalStation(station: Instance)
+	for _, descendant in ipairs(station:GetDescendants()) do
+		if descendant:IsA("ProximityPrompt") then
+			bindAfkPortalPrompt(descendant)
+		end
+	end
+
+	local directPrompt = station:FindFirstChildOfClass("ProximityPrompt")
+	if directPrompt then
+		bindAfkPortalPrompt(directPrompt)
+	end
+
+	local detector = station:FindFirstChildOfClass("ClickDetector")
+	if detector and not boundAfkPortalDetectors[detector] then
+		boundAfkPortalDetectors[detector] = true
+		detector.MouseClick:Connect(function(player)
+			promptAfkEnter(player)
+		end)
+	end
+end
+
 for _, station in ipairs(CollectionService:GetTagged(PORTAL_STATION_TAG)) do
 	bindPortalStation(station)
 end
 
 CollectionService:GetInstanceAddedSignal(PORTAL_STATION_TAG):Connect(bindPortalStation)
+
+for _, station in ipairs(CollectionService:GetTagged(AFK_PORTAL_STATION_TAG)) do
+	bindAfkPortalStation(station)
+end
+
+CollectionService:GetInstanceAddedSignal(AFK_PORTAL_STATION_TAG):Connect(bindAfkPortalStation)
 
 Players.PlayerAdded:Connect(function(player)
 	markArrivalFromTeleport(player)

@@ -93,6 +93,7 @@ local CompanionConfig = require(Modules:WaitForChild("CompanionConfig"))
 local SHOP_STATION_TAG = "BaitShopStation"
 local UPGRADE_STATION_TAG = "UpgradeStation"
 local PORTAL_STATION_TAG = "PortalStation"
+local AFK_PORTAL_STATION_TAG = "AfkPortalStation"
 local SODA_STATION_TAG = CompanionConfig.StationTag
 local STATION_DISPLAY_NAME = CompanionConfig.StationDisplayName
 local GROUP_CHEST_STATION_TAG = "GroupChestStation"
@@ -652,6 +653,9 @@ local function validateMap2Setup()
 			PlaceConfig.Map2PlaceId,
 			PlaceConfig.Map3PlaceId
 		))
+		if CaveConfig.FindAfkPortal() then
+			print("[BaitBootstrap] Main place — AFK portal found (Attribute name=AFK portal).")
+		end
 		return
 	end
 
@@ -676,12 +680,15 @@ local function validateMap2Setup()
 			end
 		end
 
-		if findNamedInstance("portal") then
+		if CaveConfig.FindMapPortal() then
 			print(string.format(
 				"[BaitBootstrap] Map 2 place — portal picker -> mapa 1 lub mapa 3 (place %d / %d)",
 				PlaceConfig.MainPlaceId,
 				PlaceConfig.Map3PlaceId
 			))
+		end
+		if CaveConfig.FindAfkPortal() then
+			print("[BaitBootstrap] Map 2 place — AFK portal bound (Attribute name=AFK portal).")
 		end
 		return
 	end
@@ -699,7 +706,7 @@ local function validateMap2Setup()
 			end
 		end
 
-		if findNamedInstance("portal") then
+		if CaveConfig.FindMapPortal() then
 			print(string.format(
 				"[BaitBootstrap] Map 3 place — portal picker -> mapa 1 lub mapa 2 (place %d / %d)",
 				PlaceConfig.MainPlaceId,
@@ -707,6 +714,9 @@ local function validateMap2Setup()
 			))
 		else
 			warn("[BaitBootstrap] Map 3 — brak obiektu 'portal' w Workspace. Dodaj portal wyboru map.")
+		end
+		if CaveConfig.FindAfkPortal() then
+			print("[BaitBootstrap] Map 3 place — AFK portal bound (Attribute name=AFK portal).")
 		end
 		return
 	end
@@ -717,25 +727,14 @@ local function validateMap2Setup()
 	))
 end
 
-local function ensurePortalInteraction()
-	local target = findNamedInstance("portal")
-	if not target then
-		if PlaceConfig.IsAfkPlace() then
-			return
-		end
-		if PlaceConfig.IsMap2Place() then
-			warn("[BaitBootstrap] Map 2 — brak obiektu 'portal' w Workspace. Dodaj portal wyboru map.")
-		elseif PlaceConfig.IsMap3Place() then
-			warn("[BaitBootstrap] Map 3 — brak obiektu 'portal' w Workspace. Dodaj portal wyboru map.")
-		elseif PlaceConfig.IsHubPlace() then
-			warn("[BaitBootstrap] Missing Workspace object named 'portal'. Map picker will not work until it exists.")
-		end
-		return
-	end
-
-	local portalDestination = "picker"
-	local portalLabel = "Maps"
-
+local function bindBuiltPortal(
+	target: Instance,
+	portalDestination: string,
+	portalLabel: string,
+	actionText: string,
+	stationTag: string,
+	interactionName: string
+)
 	local searchRoot: Instance = if target:IsA("Model") or target:IsA("Folder") or target:IsA("BasePart")
 		then target
 		else target.Parent or Workspace
@@ -748,7 +747,6 @@ local function ensurePortalInteraction()
 	end
 
 	local parentForPart: Instance = if target:IsA("Model") or target:IsA("Folder") then target else target.Parent or Workspace
-	local interactionName = "PortalInteraction"
 	local existing = parentForPart:FindFirstChild(interactionName)
 	local interaction: Part
 
@@ -772,7 +770,7 @@ local function ensurePortalInteraction()
 	interaction.Transparency = 1
 	interaction.CastShadow = false
 	interaction:SetAttribute("PortalDestination", portalDestination)
-	CollectionService:AddTag(interaction, PORTAL_STATION_TAG)
+	CollectionService:AddTag(interaction, stationTag)
 
 	for _, descendant in ipairs(searchRoot:GetDescendants()) do
 		if descendant:IsA("ProximityPrompt") and not descendant:IsDescendantOf(interaction) then
@@ -782,12 +780,12 @@ local function ensurePortalInteraction()
 
 	if target:IsA("BasePart") then
 		target:SetAttribute("PortalDestination", portalDestination)
-		CollectionService:AddTag(target, PORTAL_STATION_TAG)
+		CollectionService:AddTag(target, stationTag)
 	elseif target:IsA("Model") then
 		local primary = target.PrimaryPart or target:FindFirstChildWhichIsA("BasePart", true)
 		if primary then
 			primary:SetAttribute("PortalDestination", portalDestination)
-			CollectionService:AddTag(primary, PORTAL_STATION_TAG)
+			CollectionService:AddTag(primary, stationTag)
 		end
 	end
 
@@ -801,7 +799,7 @@ local function ensurePortalInteraction()
 		prompt.Parent = interaction
 	end
 
-	prompt.ActionText = "Teleport"
+	prompt.ActionText = actionText
 	prompt.ObjectText = portalLabel
 	prompt.KeyboardKeyCode = Enum.KeyCode.E
 	prompt.GamepadKeyCode = Enum.KeyCode.ButtonX
@@ -826,6 +824,32 @@ local function ensurePortalInteraction()
 		portalDestination,
 		mapPromptCount
 	))
+end
+
+local function ensurePortalInteraction()
+	if PlaceConfig.IsAfkPlace() then
+		return
+	end
+
+	local mapPortal = CaveConfig.FindMapPortal()
+	if mapPortal then
+		bindBuiltPortal(mapPortal, "picker", "Worlds", "Teleport", PORTAL_STATION_TAG, "PortalInteraction")
+	else
+		if PlaceConfig.IsMap2Place() then
+			warn("[BaitBootstrap] Map 2 — brak obiektu 'portal' w Workspace. Dodaj portal wyboru map.")
+		elseif PlaceConfig.IsMap3Place() then
+			warn("[BaitBootstrap] Map 3 — brak obiektu 'portal' w Workspace. Dodaj portal wyboru map.")
+		elseif PlaceConfig.IsHubPlace() then
+			warn("[BaitBootstrap] Missing Workspace object named 'portal'. Map picker will not work until it exists.")
+		end
+	end
+
+	local afkPortal = CaveConfig.FindAfkPortal()
+	if afkPortal then
+		bindBuiltPortal(afkPortal, "afk", "AFK", "Go AFK", AFK_PORTAL_STATION_TAG, "AfkPortalInteraction")
+	elseif PlaceConfig.IsHubPlace() or PlaceConfig.IsMap2Place() or PlaceConfig.IsMap3Place() then
+		warn("[BaitBootstrap] Missing AFK portal (Attribute name=AFK portal). HUD PORTAL still teleports to the map portal.")
+	end
 end
 
 local function normalizeStationKey(value: string): string

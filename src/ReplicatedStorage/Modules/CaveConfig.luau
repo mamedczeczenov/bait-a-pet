@@ -28,6 +28,9 @@ CaveConfig.VipCatchMarker = "VipCatch"
 CaveConfig.Map2SpawnMarker = "Map2Spawn"
 CaveConfig.Map3SpawnMarker = "Map3Spawn"
 CaveConfig.AfkSpawnMarker = "AfkSpawn"
+-- Built world portals (Attribute "name" / "Name", or Instance.Name).
+CaveConfig.MapPortalMarker = "portal"
+CaveConfig.AfkPortalMarker = "AFK portal"
 -- Standing on spawn / ThrowSpawn still throws into the normal cave.
 CaveConfig.ThrowSpawnRadius = 36
 
@@ -251,6 +254,62 @@ function CaveConfig.FindPartByMarker(marker: string): BasePart?
 	end
 
 	return nameFallback
+end
+
+function CaveConfig.FindInstanceByMarker(marker: string): Instance?
+	local want = string.lower(marker)
+	local nameFallback: Instance? = nil
+
+	for _, descendant in ipairs(Workspace:GetDescendants()) do
+		if not descendant:IsA("BasePart") and not descendant:IsA("Model") then
+			continue
+		end
+		local attr = CaveConfig.GetMarkerAttribute(descendant)
+		if typeof(attr) == "string" and string.lower(attr) == want then
+			return descendant
+		end
+		if string.lower(descendant.Name) == want and not nameFallback then
+			nameFallback = descendant
+		end
+	end
+
+	return nameFallback
+end
+
+function CaveConfig.IsAfkPortal(instance: Instance): boolean
+	local current: Instance? = instance
+	while current and current ~= Workspace do
+		if CaveConfig.HasMarker(current, CaveConfig.AfkPortalMarker) then
+			return true
+		end
+		current = current.Parent
+	end
+	return false
+end
+
+function CaveConfig.FindMapPortal(): Instance?
+	local best: Instance? = nil
+	for _, descendant in ipairs(Workspace:GetDescendants()) do
+		if not descendant:IsA("BasePart") and not descendant:IsA("Model") then
+			continue
+		end
+		if CaveConfig.IsAfkPortal(descendant) then
+			continue
+		end
+		if CaveConfig.HasMarker(descendant, CaveConfig.MapPortalMarker) then
+			if descendant:IsA("Model") then
+				return descendant
+			end
+			if not best then
+				best = descendant
+			end
+		end
+	end
+	return best
+end
+
+function CaveConfig.FindAfkPortal(): Instance?
+	return CaveConfig.FindInstanceByMarker(CaveConfig.AfkPortalMarker)
 end
 
 function CaveConfig.FindVipSpawnPart(): BasePart?

@@ -10,6 +10,7 @@ local Modules = ReplicatedStorage:WaitForChild("Modules")
 local PlaceConfig = require(Modules:WaitForChild("PlaceConfig"))
 local UiTheme = require(Modules:WaitForChild("UiTheme"))
 local UiToast = require(Modules:WaitForChild("UiToast"))
+local AfkConfig = require(Modules:WaitForChild("AfkConfig"))
 
 local remotes = ReplicatedStorage:WaitForChild("Remotes")
 local petResultRemote = remotes:WaitForChild("PetResult") :: RemoteEvent
@@ -150,6 +151,92 @@ local cancelButton = UiTheme.Button({
 })
 cancelButton.MouseButton1Click:Connect(hidePicker)
 
+local afkOverlay = UiTheme.Create("Frame", {
+	Name = "AfkConfirm",
+	BackgroundColor3 = Color3.fromRGB(20, 28, 40),
+	BackgroundTransparency = 0.35,
+	Size = UDim2.fromScale(1, 1),
+	Visible = false,
+	ZIndex = 50,
+}, screenGui) :: Frame
+
+local afkDialog = UiTheme.Create("Frame", {
+	Name = "Dialog",
+	AnchorPoint = Vector2.new(0.5, 0.5),
+	BackgroundColor3 = UiTheme.Colors.BgRaised,
+	BorderSizePixel = 0,
+	Position = UDim2.fromScale(0.5, 0.5),
+	Size = UDim2.fromOffset(400, 210),
+	ZIndex = 51,
+}, afkOverlay) :: Frame
+UiTheme.Corner(afkDialog, UiTheme.CornerPanel)
+UiTheme.Stroke(afkDialog, UiTheme.Colors.Stroke, 4, 0)
+
+UiTheme.Create("TextLabel", {
+	Name = "Title",
+	BackgroundTransparency = 1,
+	Position = UDim2.fromOffset(20, 16),
+	Size = UDim2.fromOffset(360, 28),
+	Font = UiTheme.FontTitle,
+	Text = AfkConfig.EnterTitle,
+	TextColor3 = UiTheme.Colors.TextDark,
+	TextSize = 22,
+	TextXAlignment = Enum.TextXAlignment.Left,
+	ZIndex = 52,
+}, afkDialog)
+
+UiTheme.Create("TextLabel", {
+	Name = "Body",
+	BackgroundTransparency = 1,
+	Position = UDim2.fromOffset(20, 52),
+	Size = UDim2.fromOffset(360, 78),
+	Font = UiTheme.FontBody,
+	Text = AfkConfig.EnterBody,
+	TextColor3 = UiTheme.Colors.TextDim,
+	TextSize = 16,
+	TextWrapped = true,
+	TextXAlignment = Enum.TextXAlignment.Left,
+	TextYAlignment = Enum.TextYAlignment.Top,
+	ZIndex = 52,
+}, afkDialog)
+
+local afkYes = UiTheme.Button({
+	Name = "Yes",
+	Parent = afkDialog,
+	Position = UDim2.fromOffset(20, 146),
+	Size = UDim2.fromOffset(170, 42),
+	Text = AfkConfig.EnterConfirm,
+	TextSize = 16,
+	Variant = "pink",
+	ZIndex = 52,
+})
+
+local afkCancel = UiTheme.Button({
+	Name = "Cancel",
+	Parent = afkDialog,
+	Position = UDim2.fromOffset(210, 146),
+	Size = UDim2.fromOffset(170, 42),
+	Text = "Cancel",
+	TextSize = 16,
+	Variant = "muted",
+	ZIndex = 52,
+})
+
+local function hideAfkConfirm()
+	afkOverlay.Visible = false
+end
+
+local function showAfkConfirm()
+	hidePicker()
+	afkOverlay.Visible = true
+end
+
+afkCancel.MouseButton1Click:Connect(hideAfkConfirm)
+afkYes.MouseButton1Click:Connect(function()
+	hideAfkConfirm()
+	requestTeleportRemote:FireServer("afk")
+end)
+
 local function showPicker(options: { PickerOption })
 	optionDefs = options
 	for index, button in ipairs(optionButtons) do
@@ -172,6 +259,11 @@ end
 
 openMapPickerRemote.OnClientEvent:Connect(function(payload)
 	if typeof(payload) ~= "table" then
+		return
+	end
+
+	if payload.Type == "AfkEnter" then
+		showAfkConfirm()
 		return
 	end
 
