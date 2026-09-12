@@ -1,0 +1,5 @@
+# Narzędzia Roblox — na Macu: https://github.com/rojo-rbx/rokit
+# Potem w folderze projektu: rokit install
+
+[tools]
+rojo = "rojo-rbx/rojo@7.7.0"

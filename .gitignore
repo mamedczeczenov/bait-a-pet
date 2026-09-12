@@ -7,4 +7,8 @@ sourcemap.json
 .env
 .env.*
 .idea/
-.vscode/
+
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json

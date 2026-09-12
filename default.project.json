@@ -1,5 +1,5 @@
 {
-  "name": "curier-dashboard-roblox",
+  "name": "BaitAPet",
   "tree": {
     "$className": "DataModel",
     "ReplicatedStorage": {
@@ -7,9 +7,6 @@
     },
     "ServerScriptService": {
       "$path": "src/ServerScriptService"
-    },
-    "StarterGui": {
-      "$path": "src/StarterGui"
     },
     "StarterPlayer": {
       "$className": "StarterPlayer",

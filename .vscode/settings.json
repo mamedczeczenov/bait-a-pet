@@ -1,0 +1,7 @@
+{
+  "luau-lsp.sourcemap.enabled": true,
+  "luau-lsp.sourcemap.autogenerate": true,
+  "luau-lsp.fflags.enableNewSolver": true,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true
+}
