@@ -1,0 +1,1666 @@
+[
+  {
+    "name": "Amethyst Bear",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Amethyst Penguin",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Aqua Butterfly",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Aqua Hybrid",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 1,
+    "score": 18
+  },
+  {
+    "name": "Arctic Fox",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 1,
+    "score": 18
+  },
+  {
+    "name": "Atlantis Butterfly",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Atlantis Guardian",
+    "parts": 2,
+    "meshParts": 6,
+    "meshes": 0,
+    "decals": 1,
+    "score": 21
+  },
+  {
+    "name": "Atlantis Hybrid",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 1,
+    "score": 18
+  },
+  {
+    "name": "Atlantis Overlord",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 1,
+    "score": 18
+  },
+  {
+    "name": "Atlantis Pegasus",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Baby Blue Bee",
+    "parts": 3,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 13
+  },
+  {
+    "name": "Balloon Kitty",
+    "parts": 3,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 13
+  },
+  {
+    "name": "Balloon Mouse",
+    "parts": 3,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 13
+  },
+  {
+    "name": "Balloon Wolf",
+    "parts": 3,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 16
+  },
+  {
+    "name": "Beach Bat",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Beach Boi",
+    "parts": 2,
+    "meshParts": 1,
+    "meshes": 0,
+    "decals": 1,
+    "score": 6
+  },
+  {
+    "name": "Bear Plushie",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Beeism",
+    "parts": 3,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 13
+  },
+  {
+    "name": "Beta TV",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Blocky Butterfly",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Blocky Hybrid",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 1,
+    "score": 18
+  },
+  {
+    "name": "Blue Bull",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Blue Candy Floss",
+    "parts": 3,
+    "meshParts": 2,
+    "meshes": 1,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Blue Ducky",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Blue Gift",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Blueberry Deer",
+    "parts": 2,
+    "meshParts": 7,
+    "meshes": 0,
+    "decals": 1,
+    "score": 24
+  },
+  {
+    "name": "Brick Bear",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Brick Doggy",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Brick Piggy",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Brick Shark",
+    "parts": 3,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 13
+  },
+  {
+    "name": "Brick Stack",
+    "parts": 3,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 2,
+    "score": 20
+  },
+  {
+    "name": "Brick Wolf",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 1,
+    "score": 18
+  },
+  {
+    "name": "Bruh",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Bumble Bee",
+    "parts": 3,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 13
+  },
+  {
+    "name": "Bunny",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Bunny Plushie",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Butterflynger",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 1,
+    "score": 18
+  },
+  {
+    "name": "Candy Butterfly",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Candy Hybrid",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 1,
+    "score": 18
+  },
+  {
+    "name": "Candy Piggy Stack",
+    "parts": 3,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 2,
+    "score": 20
+  },
+  {
+    "name": "Catmouse",
+    "parts": 4,
+    "meshParts": 6,
+    "meshes": 0,
+    "decals": 2,
+    "score": 24
+  },
+  {
+    "name": "Cherry Dino",
+    "parts": 2,
+    "meshParts": 8,
+    "meshes": 0,
+    "decals": 1,
+    "score": 27
+  },
+  {
+    "name": "Chicken",
+    "parts": 3,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 1,
+    "score": 19
+  },
+  {
+    "name": "Chocolate Bat",
+    "parts": 2,
+    "meshParts": 6,
+    "meshes": 0,
+    "decals": 1,
+    "score": 21
+  },
+  {
+    "name": "Chocolate Bear",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Chocolate Bunny",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Chocolate Chicken",
+    "parts": 3,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 1,
+    "score": 19
+  },
+  {
+    "name": "Classic Fox",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Classic Mouse",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Classic Trio",
+    "parts": 5,
+    "meshParts": 9,
+    "meshes": 0,
+    "decals": 3,
+    "score": 35
+  },
+  {
+    "name": "Clown Bee",
+    "parts": 4,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 17
+  },
+  {
+    "name": "Clown Bunny",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Clown Doggy",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Clown Kitty",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Coral Doggy",
+    "parts": 2,
+    "meshParts": 6,
+    "meshes": 0,
+    "decals": 1,
+    "score": 21
+  },
+  {
+    "name": "Coral Fox",
+    "parts": 2,
+    "meshParts": 7,
+    "meshes": 0,
+    "decals": 1,
+    "score": 24
+  },
+  {
+    "name": "Coral Kitty",
+    "parts": 2,
+    "meshParts": 6,
+    "meshes": 0,
+    "decals": 1,
+    "score": 21
+  },
+  {
+    "name": "Coral Panda",
+    "parts": 2,
+    "meshParts": 6,
+    "meshes": 0,
+    "decals": 1,
+    "score": 21
+  },
+  {
+    "name": "Crazy Cat Stack",
+    "parts": 5,
+    "meshParts": 10,
+    "meshes": 0,
+    "decals": 3,
+    "score": 38
+  },
+  {
+    "name": "Crystal Bear",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 1,
+    "score": 18
+  },
+  {
+    "name": "Crystal Bull",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 1,
+    "score": 18
+  },
+  {
+    "name": "Crystal Bunny",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 1,
+    "score": 18
+  },
+  {
+    "name": "Dino Gift",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 1,
+    "score": 18
+  },
+  {
+    "name": "Dogcat",
+    "parts": 4,
+    "meshParts": 6,
+    "meshes": 0,
+    "decals": 2,
+    "score": 24
+  },
+  {
+    "name": "Doggy",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Dowodle",
+    "parts": 2,
+    "meshParts": 2,
+    "meshes": 0,
+    "decals": 1,
+    "score": 9
+  },
+  {
+    "name": "Ducky",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Easter Bull",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Elephant Plushie",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 0,
+    "score": 17
+  },
+  {
+    "name": "Emerald Doggy",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Emerald Gem",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Emerald Kitty",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Evil Marsh",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Evil Shock",
+    "parts": 2,
+    "meshParts": 2,
+    "meshes": 0,
+    "decals": 1,
+    "score": 9
+  },
+  {
+    "name": "Evil Snowman",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 0,
+    "score": 17
+  },
+  {
+    "name": "Fancy Bear",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Flying Pig",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 1,
+    "score": 18
+  },
+  {
+    "name": "Fox",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Fox Plushie",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Ghost Doggy",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Ghost Kitty",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Ghost Mouse",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Giant Robot",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Gifted Bat",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Gifted Butterfly",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Gifted Mouse",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Gloom Bear",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Gloom Bunny",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Gloom Doggy",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Gloom Kitty",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Golden Snowball",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Green Gummy Bear",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Gummy Doggy",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Gummy Kitty",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Gummy Pals",
+    "parts": 3,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 3,
+    "score": 15
+  },
+  {
+    "name": "Gummy Shark",
+    "parts": 3,
+    "meshParts": 2,
+    "meshes": 0,
+    "decals": 1,
+    "score": 10
+  },
+  {
+    "name": "Gummy Worm",
+    "parts": 3,
+    "meshParts": 2,
+    "meshes": 0,
+    "decals": 1,
+    "score": 10
+  },
+  {
+    "name": "Holy Bee",
+    "parts": 3,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 16
+  },
+  {
+    "name": "Holy Bell",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Holy Shock",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Honey Comb Bee",
+    "parts": 5,
+    "meshParts": 9,
+    "meshes": 0,
+    "decals": 3,
+    "score": 35
+  },
+  {
+    "name": "Infernal Master",
+    "parts": 2,
+    "meshParts": 6,
+    "meshes": 0,
+    "decals": 1,
+    "score": 21
+  },
+  {
+    "name": "Inferno Cube",
+    "parts": 2,
+    "meshParts": 1,
+    "meshes": 0,
+    "decals": 1,
+    "score": 6
+  },
+  {
+    "name": "Kelp Mouse",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "King Doggy",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "King Eye",
+    "parts": 1,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 0,
+    "score": 13
+  },
+  {
+    "name": "King Pufferfish",
+    "parts": 2,
+    "meshParts": 6,
+    "meshes": 0,
+    "decals": 0,
+    "score": 20
+  },
+  {
+    "name": "King Snowman",
+    "parts": 2,
+    "meshParts": 6,
+    "meshes": 0,
+    "decals": 0,
+    "score": 20
+  },
+  {
+    "name": "Kitty",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Kitty Katty",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 1,
+    "score": 18
+  },
+  {
+    "name": "Kitty Witch",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 1,
+    "score": 18
+  },
+  {
+    "name": "Lava Bear",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Lemon Bat",
+    "parts": 2,
+    "meshParts": 6,
+    "meshes": 0,
+    "decals": 1,
+    "score": 21
+  },
+  {
+    "name": "Lemon Fox",
+    "parts": 2,
+    "meshParts": 8,
+    "meshes": 0,
+    "decals": 1,
+    "score": 27
+  },
+  {
+    "name": "Love Birds",
+    "parts": 4,
+    "meshParts": 6,
+    "meshes": 0,
+    "decals": 2,
+    "score": 24
+  },
+  {
+    "name": "Love Ducks",
+    "parts": 6,
+    "meshParts": 8,
+    "meshes": 0,
+    "decals": 2,
+    "score": 32
+  },
+  {
+    "name": "Lucky Kitty",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Lucky Marshmallow",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Lucky Shark",
+    "parts": 3,
+    "meshParts": 2,
+    "meshes": 0,
+    "decals": 1,
+    "score": 10
+  },
+  {
+    "name": "Lucky TopHat",
+    "parts": 17,
+    "meshParts": 21,
+    "meshes": 0,
+    "decals": 6,
+    "score": 86
+  },
+  {
+    "name": "Lunar Fox",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Lunarcorn",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Magenta Cube",
+    "parts": 2,
+    "meshParts": 1,
+    "meshes": 0,
+    "decals": 1,
+    "score": 6
+  },
+  {
+    "name": "Magic Mouse",
+    "parts": 2,
+    "meshParts": 7,
+    "meshes": 0,
+    "decals": 1,
+    "score": 24
+  },
+  {
+    "name": "Magic Panda",
+    "parts": 2,
+    "meshParts": 7,
+    "meshes": 0,
+    "decals": 1,
+    "score": 24
+  },
+  {
+    "name": "Magma Hybrid",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 1,
+    "score": 18
+  },
+  {
+    "name": "Magma Trio",
+    "parts": 5,
+    "meshParts": 9,
+    "meshes": 0,
+    "decals": 3,
+    "score": 35
+  },
+  {
+    "name": "Manticore",
+    "parts": 2,
+    "meshParts": 7,
+    "meshes": 0,
+    "decals": 1,
+    "score": 24
+  },
+  {
+    "name": "Marshmallow",
+    "parts": 2,
+    "meshParts": 2,
+    "meshes": 0,
+    "decals": 1,
+    "score": 9
+  },
+  {
+    "name": "Night Dweller",
+    "parts": 2,
+    "meshParts": 10,
+    "meshes": 0,
+    "decals": 1,
+    "score": 33
+  },
+  {
+    "name": "Night Terror",
+    "parts": 2,
+    "meshParts": 8,
+    "meshes": 0,
+    "decals": 1,
+    "score": 27
+  },
+  {
+    "name": "Obsidian Bull",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Ocean Bear",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Ocean Deer",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Ocean Kitty",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Octopus",
+    "parts": 2,
+    "meshParts": 2,
+    "meshes": 0,
+    "decals": 1,
+    "score": 9
+  },
+  {
+    "name": "Orange Deer",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Orange Gummy Bear",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Orange Mouse",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Orca",
+    "parts": 3,
+    "meshParts": 2,
+    "meshes": 0,
+    "decals": 1,
+    "score": 10
+  },
+  {
+    "name": "Palm Bear",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Palm Bunny",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Patriotic Mouse",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Patriotic Octopus",
+    "parts": 2,
+    "meshParts": 2,
+    "meshes": 0,
+    "decals": 1,
+    "score": 9
+  },
+  {
+    "name": "Patriotic Penguin",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Patriotic Robot",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Patriotic Wolf",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Penguin",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Peppermint Doggy",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Peppermint Piggy",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Piggy",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Piggy Gift",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Pink Candy Floss",
+    "parts": 3,
+    "meshParts": 2,
+    "meshes": 1,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Pink Crab",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Pumpkin Kitty",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Queen Bee",
+    "parts": 3,
+    "meshParts": 8,
+    "meshes": 0,
+    "decals": 1,
+    "score": 28
+  },
+  {
+    "name": "Radiant Protector",
+    "parts": 2,
+    "meshParts": 6,
+    "meshes": 0,
+    "decals": 1,
+    "score": 21
+  },
+  {
+    "name": "Radioactive Bear",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Rainbow Bat",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Rainbow Butterfly",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Rainbow Dogcat",
+    "parts": 4,
+    "meshParts": 6,
+    "meshes": 0,
+    "decals": 2,
+    "score": 24
+  },
+  {
+    "name": "Rainbow Drag",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Rainbow Hybrid",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 1,
+    "score": 18
+  },
+  {
+    "name": "Rainbow Marshmallow",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Rainbow Shock",
+    "parts": 2,
+    "meshParts": 2,
+    "meshes": 0,
+    "decals": 1,
+    "score": 9
+  },
+  {
+    "name": "Red Dice",
+    "parts": 2,
+    "meshParts": 1,
+    "meshes": 1,
+    "decals": 0,
+    "score": 7
+  },
+  {
+    "name": "Rubber Bunny",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Rubber Deer",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Rubber Kitty",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Ruby Gem",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Rudolph",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Rudolph Shock",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 1,
+    "score": 18
+  },
+  {
+    "name": "Sandy Deer",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Sandy Kitty",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Sandy Piggy",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Sandy Wolf",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Santa Bunny",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 1,
+    "score": 18
+  },
+  {
+    "name": "Slushy Deer",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 1,
+    "score": 18
+  },
+  {
+    "name": "Snowball",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Snowman",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 0,
+    "score": 17
+  },
+  {
+    "name": "Snowy Bear",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Snowy Doggy",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Snowy Fox",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 1,
+    "score": 18
+  },
+  {
+    "name": "Snowy Kitty",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Space Bull",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Space Bunny",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Space Mouse",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Splash Fox",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 1,
+    "score": 18
+  },
+  {
+    "name": "Summer Doggy",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Summer Shark",
+    "parts": 3,
+    "meshParts": 2,
+    "meshes": 0,
+    "decals": 1,
+    "score": 10
+  },
+  {
+    "name": "Summer Virus",
+    "parts": 3,
+    "meshParts": 1,
+    "meshes": 0,
+    "decals": 0,
+    "score": 6
+  },
+  {
+    "name": "Sweet Bunny",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Sweet Crawler",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Sweet Mouse",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Sweet Wolf",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Sylently's Pet",
+    "parts": 2,
+    "meshParts": 6,
+    "meshes": 0,
+    "decals": 1,
+    "score": 21
+  },
+  {
+    "name": "Teddy Bear",
+    "parts": 2,
+    "meshParts": 13,
+    "meshes": 0,
+    "decals": 0,
+    "score": 41
+  },
+  {
+    "name": "Tophat (A)",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 1,
+    "score": 18
+  },
+  {
+    "name": "Void Dragon",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Void Fox",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Void Kitty",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Water Bear",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Water Crab",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Water Deer",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Water Golem",
+    "parts": 2,
+    "meshParts": 3,
+    "meshes": 0,
+    "decals": 1,
+    "score": 12
+  },
+  {
+    "name": "Wind Up Bear",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Wind Up Bunny",
+    "parts": 2,
+    "meshParts": 4,
+    "meshes": 0,
+    "decals": 1,
+    "score": 15
+  },
+  {
+    "name": "Wind Up Deer",
+    "parts": 2,
+    "meshParts": 5,
+    "meshes": 0,
+    "decals": 1,
+    "score": 18
+  }
+]

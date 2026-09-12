@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+node_modules/
+*.rbxl
+*.rbxlx
+sourcemap.json
+.env
+.env.*
+.idea/
+.vscode/
