@@ -1,6 +1,6 @@
 # Bait a Pet
 
-Prywatne repo: [mamedczeczenov/bait-a-pet](https://github.com/mamedczeczenov/bait-a-pet).
+Publiczne repo: [mamedczeczenov/bait-a-pet](https://github.com/mamedczeczenov/bait-a-pet).
 
 Kod Luau na dysku. **Rojo** wgrywa go na żywo do Roblox Studio.
 
@@ -16,16 +16,14 @@ Kod Luau na dysku. **Rojo** wgrywa go na żywo do Roblox Studio.
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-### 2. Sklonuj repo (prywatne — musisz być zalogowany)
+### 2. Sklonuj repo
 
 ```bash
-brew install gh git
-gh auth login
 git clone https://github.com/mamedczeczenov/bait-a-pet.git
 cd bait-a-pet
 ```
 
-Albo w Cursorze: **File → Clone Repository** i wklej ten sam URL.
+Albo w Cursorze: **File → Clone Repository** i wklej ten sam URL. Repo jest publiczne — logowanie do GitHuba nie jest potrzebne.
 
 ### 3. Odpal Rojo
 
